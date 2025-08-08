@@ -1,7 +1,3 @@
-当然可以，以下是适用于“KPI Dashboard MCP Server”的详细 `README.md` 文档模板，涵盖项目介绍、安装步骤、使用方法、目录结构、接口说明、示例请求等内容：
-
----
-
 ```markdown
 # KPI Dashboard MCP Server
 
@@ -32,7 +28,7 @@ kpi-dashboard-mcp-server/
 ├── requirements.txt    # 所需 Python 依赖
 └── README.md           # 项目说明文档
 
-````
+```
 
 ---
 
@@ -41,8 +37,8 @@ kpi-dashboard-mcp-server/
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/your-org/kpi-dashboard-mcp-server.git
-cd kpi-dashboard-mcp-server
+git clone https://github.com/zhangting-hit/mcp_demo.git
+cd mcp_demo
 ````
 
 ### 2. 创建虚拟环境（可选）
@@ -74,21 +70,35 @@ python api.py
 ```bash
 python main.py
 ```
-
+![alt text](imgs\api.png)
 ### MCP Server 启动成功后输出：
 
 ```
 FastMCP Server is running at http://localhost:8080
 ```
-
+![alt text](imgs\fastmcp.png)
 ---
 
 ## 🔗 在 Cherry Studio 中连接 MCP Server
 
 1. 打开 Cherry Studio
-2. 点击「插件」>「添加插件」>「MCP File Server」
-3. 设置端口为 `8080`，协议为 `http`
-4. 点击「连接」即可与本服务交互
+2. 点击设置，设置MCP服务器配置
+'''
+{
+  "name": "KPI Analysis Agent",
+  "command": "D:\Anaconda\envs\mcp\python.exe",
+  "args": [
+    "D:/Users/Desktop/mcp_demo/main.py"
+  ],
+  "env": {
+    "PYTHONUNBUFFERED": "1"
+  }
+}
+
+'''
+
+输出就是MCP Server起作用了
+![alt text](imgs\result.png)
 
 ---
 
@@ -149,10 +159,6 @@ A: 请访问具体 API 路径，如 `http://127.0.0.1:8000/kpi/summary`，或访
 
 ## 📄 License
 
-MIT License © 2025 KPI Dashboard Team
+MIT License 
 
-```
 
----
-
-```
