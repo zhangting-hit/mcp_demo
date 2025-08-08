@@ -1,5 +1,3 @@
-以下是格式已修复并美化的完整 `README.md` 文档（适用于 GitHub 渲染）：
-
 ```markdown
 # KPI Dashboard MCP Server
 
@@ -30,7 +28,7 @@ kpi-dashboard-mcp-server/
 ├── requirements.txt    # 所需 Python 依赖
 └── README.md           # 项目说明文档
 
-````
+```
 
 ---
 
@@ -41,7 +39,7 @@ kpi-dashboard-mcp-server/
 ```bash
 git clone https://github.com/zhangting-hit/mcp_demo.git
 cd mcp_demo
-````
+```
 
 ### 2. 创建虚拟环境（可选）
 
@@ -86,6 +84,7 @@ FastMCP Server is running at http://localhost:8080
 ```
 
 > 示例截图
+
 > ![API 示例](imgs/api.png)
 > ![MCP 示例](imgs/fastmcp.png)
 
@@ -178,9 +177,3 @@ A: 直接访问根路径会返回 404，请使用以下路径：
 
 MIT License
 
-```
-
----
-
-如果你需要我再帮你写 `requirements.txt`、补全某些代码模块（比如 `data.py`、`main.py` 等），也可以继续告诉我。
-```
