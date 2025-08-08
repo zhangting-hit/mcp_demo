@@ -1,4 +1,3 @@
-```markdown
 # KPI Dashboard MCP Server
 
 基于 FastAPI 与 FastMCP 构建的智能 KPI Dashboard 服务端。  
@@ -13,6 +12,22 @@
 - 📊 内置数据分析模块，无需外部数据库或 CSV 文件  
 - 🔧 支持本地开发调试与 VS Code 插件使用  
 
+---
+
+## 📁 项目结构
+
+```
+
+kpi-dashboard-mcp-server/
+│
+├── api.py              # 提供数据分析相关 API
+├── helper.py           # 数据分析工具函数（如 KPI 计算）
+├── main.py             # 启动 MCP Server 服务
+├── data.py             # 内置模拟数据，替代 CSV 加载
+├── requirements.txt    # 所需 Python 依赖
+└── README.md           # 项目说明文档
+
+```
 
 ---
 
