@@ -1,3 +1,5 @@
+以下是格式已修复并美化的完整 `README.md` 文档（适用于 GitHub 渲染）：
+
 ```markdown
 # KPI Dashboard MCP Server
 
@@ -8,10 +10,10 @@
 
 ## 🌟 项目亮点
 
-- ✅ 使用 FastAPI 构建轻量高性能 HTTP 接口
-- 🤖 集成 FastMCP Server，支持与 MCP 客户端（如 Cherry Studio）智能对话
-- 📊 内置数据分析模块，无需外部数据库或 CSV 文件
-- 🔧 支持本地开发调试与 VS Code 插件使用
+- ✅ 使用 FastAPI 构建轻量高性能 HTTP 接口  
+- 🤖 集成 FastMCP Server，支持与 MCP 客户端（如 Cherry Studio）智能对话  
+- 📊 内置数据分析模块，无需外部数据库或 CSV 文件  
+- 🔧 支持本地开发调试与 VS Code 插件使用  
 
 ---
 
@@ -28,7 +30,7 @@ kpi-dashboard-mcp-server/
 ├── requirements.txt    # 所需 Python 依赖
 └── README.md           # 项目说明文档
 
-```
+````
 
 ---
 
@@ -45,8 +47,10 @@ cd mcp_demo
 
 ```bash
 python -m venv venv
-source venv/bin/activate   # macOS/Linux
-venv\Scripts\activate      # Windows
+# macOS/Linux:
+source venv/bin/activate
+# Windows:
+venv\Scripts\activate
 ```
 
 ### 3. 安装依赖
@@ -59,34 +63,44 @@ pip install -r requirements.txt
 
 ## ▶️ 启动服务
 
-### 启动 API 服务（默认端口 8000）
+### 启动 API 服务（默认端口 `8000`）
 
 ```bash
 python api.py
 ```
 
-### 启动 MCP Server 服务（默认端口 8080）
+访问文档地址：
+
+* [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+### 启动 MCP Server 服务（默认端口 `8080`）
 
 ```bash
 python main.py
 ```
-![alt text](imgs\api.png)
-### MCP Server 启动成功后输出：
+
+启动后输出：
 
 ```
 FastMCP Server is running at http://localhost:8080
 ```
-![alt text](imgs\fastmcp.png)
+
+> 示例截图
+> ![API 示例](imgs/api.png)
+> ![MCP 示例](imgs/fastmcp.png)
+
 ---
 
-## 🔗 在 Cherry Studio 中连接 MCP Server
+## 🔗 Cherry Studio 中连接 MCP Server
 
 1. 打开 Cherry Studio
-2. 点击设置，设置MCP服务器配置
-'''
+2. 进入设置 → 添加 MCP 服务配置
+3. 使用以下内容：
+
+```json
 {
   "name": "KPI Analysis Agent",
-  "command": "D:\Anaconda\envs\mcp\python.exe",
+  "command": "D:\\Anaconda\\envs\\mcp\\python.exe",
   "args": [
     "D:/Users/Desktop/mcp_demo/main.py"
   ],
@@ -94,11 +108,11 @@ FastMCP Server is running at http://localhost:8080
     "PYTHONUNBUFFERED": "1"
   }
 }
+```
 
-'''
+连接成功后即可通过 Cherry 与 Agent 对话
 
-输出就是MCP Server起作用了
-![alt text](imgs\result.png)
+> ![结果示例](imgs/result.png)
 
 ---
 
@@ -108,7 +122,7 @@ FastMCP Server is running at http://localhost:8080
 
 返回 KPI 汇总结果。
 
-#### 示例返回
+#### 示例返回：
 
 ```json
 {
@@ -129,7 +143,7 @@ def calculate_average_order_value(sales_data):
     return sum(s["amount"] for s in sales_data) / len(sales_data)
 ```
 
-然后在 `api.py` 的 `/kpi/summary` 接口中使用它即可。
+然后在 `api.py` 的 `/kpi/summary` 接口中使用它。
 
 ---
 
@@ -143,22 +157,30 @@ def calculate_average_order_value(sales_data):
 
 ## 📌 常见问题
 
-### Q: 404 Not Found when accessing `http://127.0.0.1:8000/`?
+### Q: 访问 `http://127.0.0.1:8000/` 显示 404？
 
-A: 请访问具体 API 路径，如 `http://127.0.0.1:8000/kpi/summary`，或访问 `http://127.0.0.1:8000/docs` 查看 Swagger 文档。
+A: 直接访问根路径会返回 404，请使用以下路径：
+
+* [http://127.0.0.1:8000/kpi/summary](http://127.0.0.1:8000/kpi/summary)
+* [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
 
 ## 🧑‍💻 开发者建议
 
-* 可将 `data.py` 替换为数据库接入
-* MCP Server 可拓展支持上下文记忆、图表输出等
-* 适用于嵌入知识库、BI 系统、客户支持系统等多种场景
+* 可将 `data.py` 替换为数据库或外部接口数据源
+* MCP Server 支持扩展上下文记忆、图表输出、多轮问答
+* 可用于构建嵌入式知识库、BI 平台、客户运营分析系统等
 
 ---
 
 ## 📄 License
 
-MIT License 
+MIT License
 
+```
 
+---
+
+如果你需要我再帮你写 `requirements.txt`、补全某些代码模块（比如 `data.py`、`main.py` 等），也可以继续告诉我。
+```
